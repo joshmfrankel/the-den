@@ -11,6 +11,7 @@
 * Run server with `yarn run watch`
 
 https://ejs.co/#install
+
 ## PostgreSQL
 
 * Add pg-promise - `yarn add pg-promise`
