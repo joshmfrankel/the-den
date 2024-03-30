@@ -33,4 +33,10 @@ Parcel build with React and Tailwind
 * https://tailwindcss.com/docs/guides/parcel
 * https://parceljs.org/languages/typescript/
 
+# Future
 
+* https://github.com/i18next/react-i18next
+* https://www.robinwieruch.de/react-remove-item-from-list/
+* https://react.dev/learn/typescript
+* https://react.dev/learn/choosing-the-state-structure#principles-for-structuring-state
+* https://docs.dndkit.com/introduction/getting-started
