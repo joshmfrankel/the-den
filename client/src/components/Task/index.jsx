@@ -1,26 +1,13 @@
 import ContentEditable from 'react-contenteditable';
 import Dropdown from '/src/components/Dropdown';
 
-function Task({ task }) {
-  const key = `task_${task.id}`;
-
+function Task({ task, handleTaskDelete }) {
+  const { name, id } = task;
   const handleOnChange = async (event, taskId) => {
     const requestOptions = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: event.target.value })
-    };
-
-    try {
-      await fetch(`http://localhost:9000/tasks/${taskId}`, requestOptions)
-    } catch (error) {
-      console.error(error)
-    }
-  };
-
-  const handleTaskDelete = async (event, taskId) => {
-    const requestOptions = {
-      method: 'DELETE'
+      body: JSON.stringify({ name: event.target.value.trim() })
     };
 
     try {
@@ -31,14 +18,14 @@ function Task({ task }) {
   };
 
   return (
-    <div key={key} className="bg-slate-900 text-slate-200 px-4 py-2 flex justify-between items-center">
+    <div className="bg-slate-900 text-slate-200 px-4 py-2 flex justify-between items-center">
       <ContentEditable
-        html={task.name}
-        onChange={(event) => handleOnChange(event, task.id)}
+        html={name}
+        onChange={(event) => handleOnChange(event, id)}
         className="w-full text-left"
       />
       <Dropdown>
-        <button onClick={(event) => handleTaskDelete(event, task.id)}>Delete</button>
+        <button onClick={handleTaskDelete}>Delete</button>
       </Dropdown>
     </div>
   )

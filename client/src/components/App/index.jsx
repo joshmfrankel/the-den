@@ -20,6 +20,13 @@ function App() {
       fetchTasks()
   }, [fetchTasks])
 
+  const handleTaskDelete = async (task) => {
+    setTasks(tasks.filter(item => item.name !== task.name));
+  };
+
+  /**
+   * @todo Abstract grid into TaskContainer to move state out of App component
+   */
   return (
     <div className="App">
       <header className="App-header">
@@ -28,7 +35,7 @@ function App() {
             <span>Loading...</span>
           ) : (
             <>
-              {tasks.map(task => <Task task={task} />)}
+              {tasks.map(task => <Task key={`task_${task.id}`} task={task} handleTaskDelete={() => handleTaskDelete(task)} />)}
             </>
           )}
         </div>
