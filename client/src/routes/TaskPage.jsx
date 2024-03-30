@@ -1,7 +1,8 @@
 import React, { useState, useCallback, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import Task from "/src/components/Task";
 
-function App() {
+export default function TaskPage() {
   const [tasks, setTasks] = useState('');
 
   const fetchTasks = useCallback(async () => {
@@ -28,20 +29,17 @@ function App() {
    * @todo Abstract grid into TaskContainer to move state out of App component
    */
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="grid grid-cols-4 gap-2">
-          {tasks === '' ? (
-            <span>Loading...</span>
-          ) : (
-            <>
-              {tasks.map(task => <Task key={`task_${task.id}`} task={task} handleTaskDelete={() => handleTaskDelete(task)} />)}
-            </>
-          )}
-        </div>
-      </header>
-    </div>
+    <>
+      <Link to={`/`}>Home</Link>
+      <div className="grid grid-cols-4 gap-2">
+        {tasks === '' ? (
+          <span>Loading...</span>
+        ) : (
+          <>
+            {tasks.map(task => <Task key={`task_${task.id}`} task={task} handleTaskDelete={() => handleTaskDelete(task)} />)}
+          </>
+        )}
+      </div>
+    </>
   );
 }
-
-export default App;

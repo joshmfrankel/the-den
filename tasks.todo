@@ -1,0 +1,8 @@
+TODO:
+
+Client:
+ ☐ React Router
+ ☐ i18n
+
+Server:
+  ☐ Implement Prisma ORM layer

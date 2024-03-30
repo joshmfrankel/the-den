@@ -1,5 +1,5 @@
 
-# API
+# Server
 
 Express server
 
