@@ -1,5 +1,5 @@
 import ContentEditable from 'react-contenteditable';
-import Dropdown from './Dropdown';
+import Dropdown from '/src/components/Dropdown';
 
 function Task({ task }) {
   const key = `task_${task.id}`;

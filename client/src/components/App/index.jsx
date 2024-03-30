@@ -1,8 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react'
-import logo from './logo.svg';
-import './App.css';
-
-import Task from './Task';
+import Task from "/src/components/Task";
 
 function App() {
   const [tasks, setTasks] = useState('');
@@ -26,8 +23,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
         <div className="grid grid-cols-4 gap-2">
           {tasks === '' ? (
             <span>Loading...</span>
