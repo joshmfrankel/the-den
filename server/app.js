@@ -9,6 +9,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var tasksRouter = require('./routes/tasks');
+var boardsRouter = require('./routes/boards');
 var usersRouter = require('./routes/users');
 var renderHealthRouter = require('./routes/render/health');
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/tasks', tasksRouter);
+app.use('/boards', boardsRouter);
 app.use('/users', usersRouter);
 app.use('/render/health', renderHealthRouter)
 

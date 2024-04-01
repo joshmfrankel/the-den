@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model boards {
+  id   String     @id @default(uuid())
+  name String @db.VarChar
+  lanes lanes[]
+}
+
+model lanes {
+  id   String     @id @default(uuid())
+  name String @db.VarChar
+  board boards @relation(fields: [board_id], references: [id])
+  board_id String
+  tasks tasks[]
+}
+
+model tasks {
+  id   String     @id @default(uuid())
+  name String? @db.VarChar
+  lane lanes @relation(fields: [lane_id], references: [id])
+  lane_id String
+}
+

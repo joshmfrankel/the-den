@@ -1,16 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-const db = require('../config/pg')
+const db = require('../config/pg');
+const prisma = require('../config/prisma');
 
 router.get('/', async (req, res, next) => {
   try {
-    const tasks = await db.any(`
-      SELECT *
-      FROM tasks
-    `)
+    const allTasks = await prisma.tasks.findMany();
 
-    res.json({ tasks: tasks })
+    res.json({ tasks: allTasks })
   } catch (error) {
     console.error(error)
   }

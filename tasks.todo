@@ -1,8 +1,15 @@
 TODO:
 
 Client:
- ☐ React Router
+ ✔ React Router @done (24-04-01 13:29)
  ☐ i18n
 
 Server:
-  ☐ Implement Prisma ORM layer
+  ✔ Implement Prisma ORM layer @done (24-04-01 13:29)
+  ☐ Authorization - Can I do X action?
+  ☐ Authentication - Google OAuth
+
+Data model:
+  ☐ Lanes need ordering (scope board)
+  ☐ Tasks need ordering (scope lane)
+  ☐ Timestamps
