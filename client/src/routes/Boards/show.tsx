@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import Lane from '/src/components/Lane';
+import {DndContext} from '@dnd-kit/core';
 
 interface BoardJson {
   board: Board;
@@ -46,6 +47,10 @@ export default function BoardShowPage() {
     fetchBoard();
   }, [fetchBoard]);
 
+  const handleDragEnd = (event) => {
+    console.log('dragged')
+  };
+
   return (
     <>
       {board === false ? (
@@ -54,9 +59,11 @@ export default function BoardShowPage() {
         <div>
           <h1>{board.name}</h1>
           <div className="flex">
-            {board.lanes.map(lane =>
-              <Lane id={`lane_${lane.id}`} key={`lane_${lane.id}`} laneData={lane}/>
-            )}
+            <DndContext onDragEnd={handleDragEnd}>
+              {board.lanes.map(lane =>
+                <Lane id={`lane_${lane.id}`} key={`lane_${lane.id}`} laneData={lane}/>
+              )}
+            </DndContext>
             <div>
               <button>+ Add Lane</button>
             </div>

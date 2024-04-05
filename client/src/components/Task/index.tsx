@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ContentEditable from 'react-contenteditable';
-import { useDraggable } from '@dnd-kit/core';
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import Dropdown from '/src/components/Dropdown';
 
 function Task({ taskData, handleDeleteTask }) {
@@ -10,15 +11,18 @@ function Task({ taskData, handleDeleteTask }) {
     setTask(taskData)
   }, [taskData]);
 
-  const domId = `task_${task.id}`;
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+  } = useSortable({id: task.id});
 
-  const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: domId,
-  });
-
-  const style = transform ? {
-    transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
-  } : undefined;
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
 
   const handleOnChange = async (event, taskId) => {
     const requestOptions = {
@@ -38,7 +42,7 @@ function Task({ taskData, handleDeleteTask }) {
    * @see https://github.com/clauderic/dnd-kit/issues/477
    */
   return (
-    <div id={domId} ref={setNodeRef} style={style} className="bg-slate-900 text-slate-200 px-4 py-2 flex justify-between items-center" {...listeners} {...attributes}>
+    <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="bg-slate-900 text-slate-200 px-4 py-2 flex justify-between items-center">
       <ContentEditable
         html={task.name}
         onChange={(event) => handleOnChange(event, task.id)}
