@@ -1,12 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from '/src/components/App';
 
 // Router specific
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Root from '/src/routes/root';
-import ErrorPage from '/src/routes/ErrorPage';
-import TaskPage from '/src/routes/TaskPage';
+import { RouterProvider } from 'react-router-dom';
 
 /**
  * Note:
@@ -18,20 +14,7 @@ import TaskPage from '/src/routes/TaskPage';
 const container = document.getElementById('router');
 const root = createRoot(container);
 
-/**
- * @todo abstract outside index.jsx?
- */
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: 'tasks',
-    element: <TaskPage />,
-  }
-]);
+import { router } from '/src/config/routes';
 
 root.render(
   <StrictMode>
