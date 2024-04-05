@@ -44,8 +44,8 @@ function Dropdown({ children }) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="bg-slate-600 absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="py-1">
+        <Menu.Items className="bg-slate-600 absolute -top-2.5 left-8 z-10 w-56 origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <div className="py-1 before:content-[''] before:w-5 before:h-5 before:block before:absolute before:top-0 before:bottom-0 before:my-auto before:rotate-45 before:-z-10 before:-ml-1 before:bg-slate-600">
             {items}
           </div>
         </Menu.Items>
