@@ -27,7 +27,7 @@ export default function TaskPage() {
 
   const handleDragEnd = (event) => {
     const { over } = event;
-    console.log(over)
+    // console.log(over)
   };
 
   return (

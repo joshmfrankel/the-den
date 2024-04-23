@@ -18,7 +18,9 @@ CREATE DATABASE the_den;
 ```
 * Running migrations - `yarn run db-migrate up/down`
 
-* pg-promise - [Examples](https://github.com/vitaly-t/pg-promise/wiki/Learn-by-Example)
+* pg-promise - [Examples](https://github.com/vitaly-t/pg-promise/wiki/Learn-by-Example)\
+
+* `gen_random_uuid()` for uuid
 
 # Client
 

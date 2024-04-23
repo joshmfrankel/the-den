@@ -28,7 +28,7 @@ function Dropdown({ children }) {
   });
 
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block text-left" data-no-dnd>
       <div>
         <Menu.Button className="">
           <EllipsisVerticalIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
