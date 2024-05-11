@@ -1525,6 +1525,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/sortablejs@npm:^1":
+  version: 1.15.8
+  resolution: "@types/sortablejs@npm:1.15.8"
+  checksum: 10c0/cac9c8279ead93b5fc6b0dde6bf4b1c4fe067d40d7b2b3415880df823f2efe5779616009488f940a003687ace70cb3d52bda168dfad2b5f4242403cd8f4ed500
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/eslint-plugin@npm:7.5.0, @typescript-eslint/eslint-plugin@npm:^7.5.0":
   version: 7.5.0
   resolution: "@typescript-eslint/eslint-plugin@npm:7.5.0"
@@ -2154,6 +2161,7 @@ __metadata:
     "@parcel/validator-typescript": "npm:^2.12.0"
     "@types/react": "npm:^18.2.74"
     "@types/react-dom": "npm:^18.2.23"
+    "@types/sortablejs": "npm:^1"
     "@typescript-eslint/eslint-plugin": "npm:^7.5.0"
     "@typescript-eslint/parser": "npm:^7.5.0"
     eslint: "npm:^8.57.0"
@@ -2165,6 +2173,7 @@ __metadata:
     react-contenteditable: "npm:^3.3.7"
     react-dom: "npm:^18.2.0"
     react-router-dom: "npm:^6.22.3"
+    sortablejs: "npm:^1.15.2"
     stylelint: "npm:^16.3.1"
     stylelint-config-standard: "npm:^36.0.0"
     tailwindcss: "npm:^3.4.3"
@@ -5445,6 +5454,13 @@ __metadata:
     ip-address: "npm:^9.0.5"
     smart-buffer: "npm:^4.2.0"
   checksum: 10c0/ac77b515c260473cc7c4452f09b20939e22510ce3ae48385c516d1d5784374d5cc75be3cb18ff66cc985a7f4f2ef8fef84e984c5ec70aad58355ed59241f40a8
+  languageName: node
+  linkType: hard
+
+"sortablejs@npm:^1.15.2":
+  version: 1.15.2
+  resolution: "sortablejs@npm:1.15.2"
+  checksum: 10c0/9b9101f47a46976070f1e7ab45d1850a8754f6e71252506868731292af46a7f1a3add03914fe074cd2a6bdfe8cd6cad149cfa260fe8a53475f5306ae679bf38c
   languageName: node
   linkType: hard
 
